@@ -40,7 +40,7 @@ def upload_para_nuvem(imagem_pil):
 
 # --- INTERFACE DO SITE ---
 st.set_page_config(page_title="ID Checker Pro", page_icon="🕵️", layout="wide")
-st.title("🕵️ FaceCheck do EDUARDO- Investigação Avançada")
+st.title("🕵️ FaceCheck do EDUARDO-Investigação Avançada")
 
 arquivo = st.file_uploader("Arraste a foto do alvo aqui", type=["jpg", "png", "jpeg"])
 
@@ -103,4 +103,5 @@ if arquivo:
                 st.info("💡 **Dica de Especialista**: Use o **Yandex** e o **PimEyes** para encontrar perfis de pessoas. Use o **Google** e o **Bing** para descobrir onde a foto foi tirada ou quem é a personalidade.")
             else:
                 st.error("Falha na comunicação com a nuvem. Verifique o sinal da internet.")
+
 
