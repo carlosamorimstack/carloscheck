@@ -10,17 +10,17 @@ import imagehash
 
 # --- CONFIGURAÇÃO ---
 # Chave da sua Captura de Tela (97)
-IMGBB_API_KEY = "4442bc1aad6732d530eb03a31f258f3b" 
-BANCO_DADOS = "fotos_db.json"
-
 # --- CONFIGURAÇÃO ---
 IMGBB_API_KEY = "4442bc1aad6732d530eb03a31f258f3b" 
 
 def carregar_db():
-    # Usa a memória do navegador em vez de um arquivo no disco
+    # Isso armazena os dados na memória da sessão do navegador
     if 'historico' not in st.session_state:
         st.session_state.historico = {}
     return st.session_state.historico
+
+def salvar_db(db):
+    st.session_state.historico = db
 
 def salvar_db(db):
     st.session_state.historico = db
@@ -102,5 +102,6 @@ if arquivo:
             else:
 
                 st.error("Erro ao gerar link. Verifique a sua chave da API.")
+
 
 
