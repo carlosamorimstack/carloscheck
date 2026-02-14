@@ -13,14 +13,17 @@ import imagehash
 IMGBB_API_KEY = "4442bc1aad6732d530eb03a31f258f3b" 
 BANCO_DADOS = "fotos_db.json"
 
+# --- CONFIGURAÇÃO ---
+IMGBB_API_KEY = "4442bc1aad6732d530eb03a31f258f3b" 
+
 def carregar_db():
-    if not os.path.exists(BANCO_DADOS): return {}
-    try:
-        with open(BANCO_DADOS, "r") as f: return json.load(f)
-    except: return {}
+    # Usa a memória do navegador em vez de um arquivo no disco
+    if 'historico' not in st.session_state:
+        st.session_state.historico = {}
+    return st.session_state.historico
 
 def salvar_db(db):
-    with open(BANCO_DADOS, "w") as f: json.dump(db, f, indent=4)
+    st.session_state.historico = db
 
 def upload_para_nuvem(imagem_pil):
     """Envia a foto para o ImgBB para gerar um link que os buscadores consigam ler."""
@@ -99,4 +102,5 @@ if arquivo:
             else:
 
                 st.error("Erro ao gerar link. Verifique a sua chave da API.")
+
 
