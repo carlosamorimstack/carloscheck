@@ -1,0 +1,5 @@
+streamlit
+pillow
+imagehash
+requests
+python-dotenv
