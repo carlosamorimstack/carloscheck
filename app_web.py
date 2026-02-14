@@ -40,8 +40,8 @@ def upload_para_nuvem(imagem_pil):
     return None
 
 # --- INTERFACE DO SITE ---
-st.set_page_config(page_title="ID Checker Profissional do EDUARDO", page_icon="🕵️")
-st.title("🕵️ FaceCheck - Investigação Multimotor")
+st.set_page_config(page_title="ID Checker Profissional", page_icon="🕵️")
+st.title("🕵️ FaceCheck do eduardo- Investigação Multimotor")
 
 arquivo = st.file_uploader("Arraste a foto aqui para encontrar o perfil", type=["jpg", "png", "jpeg"])
 
@@ -99,3 +99,4 @@ if arquivo:
             else:
 
                 st.error("Erro ao gerar link. Verifique a sua chave da API.")
+
